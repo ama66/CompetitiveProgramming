@@ -25,7 +25,7 @@ def prime_fac(n):
     Factors={} ## key=factor, value=exponent
     # Start with the minimum possible factor = 2
     d=2
-    while n > 1: 
+    while n > 1 and d <= math.sqrt(n): 
         # for a given factor d find exponent/how many times n can be divided by this factor 
         k=0
         while n%d==0: 
