@@ -1,4 +1,5 @@
 def buildPartialSums(a):
+    """O(N) precompute"""
     s=np.zeros(len(a))
     s[0]=a[0]
     for i in range(1,len(a)):
@@ -6,6 +7,7 @@ def buildPartialSums(a):
     return s
 
 def Query(Left,Right):
+    """O(1) lookup"""
     s=buildPartialSums(a)
     print(s)
     return s[Right] - s[Left - 1] if Left!=0 else  s[Right] 
