@@ -1,3 +1,5 @@
+import numpy as np
+
 def buildPartialSums(a):
     """O(N) precompute"""
     s=np.zeros(len(a))
