@@ -10,7 +10,6 @@ def LongestCommonSubseq(a):
         # Reset hashmap
         freq=defaultdict(int)
         mine=maxe=a[left]
-      #  print("left",left)
         
         for right in range(left,len(a)):
             mine=min(mine,a[right])
