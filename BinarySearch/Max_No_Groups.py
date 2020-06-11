@@ -1,7 +1,7 @@
-## Given frequency array a containing for each index how many available animals 
-## find max no of groups of distinct k animals that can be formed out of all animals 
-# use binary search. Maximum number of groups is sum(a)/k  if for a given number of groups x
-## you sum for each element in [a] the minimum of the number min(a[i],x) if the sum > x*k then
+## Given frequency array a containing for each index how many animals are there of a given type 
+## find max no of groups of distinct k animals that can be formed out of all animals present
+# use binary search. Maximum number of groups is sum(a)/k.   if for a given number of groups x
+## you sum for each element in [a] the minimum of the number min(a[i],x) if the sum >= x*k then
 ## this is possible otherwise it is not possible to form this number of groups of distinct k animals 
 ## for a=[8,6] maximum number of groups of distinct 2 animals is obviously 6 (good test case!)
 
