@@ -13,7 +13,7 @@ class KnapSack:
         self.itemlist=[]
         self.remaining_capacity=G
         self.capacity=G
-        self.fill_bag=[]
+        self.final_bag=[]
         self.n=0
         
     def Build_KnapSack(self,w_arr,v_arr):
@@ -33,10 +33,13 @@ class KnapSack:
             if self.remaining_capacity - curr_weight >=0:
                 self.remaining_capacity-=curr_weight
                 MaxCap+=curr_val
+                self.final_bag.append(("wt: "+str(self.itemlist[i].w) ,"value: "+str(self.itemlist[i].v),"fraction: "+str(1)))
             else: # Check if I can take a fraction
                 frac=self.remaining_capacity/curr_weight
                 MaxCap+=curr_val*frac
                 self.remaining_capacity-=frac*curr_weight
+                self.final_bag.append(("wt: "+str(self.itemlist[i].w) ,"value: "+str(self.itemlist[i].v),"fraction: "+str(frac)))
+
                 break
                 
         return MaxCap
@@ -55,8 +58,15 @@ G=10
 # [KS.itemlist[i].w for i in range(len(w))]
 #[KS.itemlist[i].w for i in range(len(w))]
 
+
 KS=KnapSack(10)
 KS.Build_KnapSack(w,v)
 KS.Fill_KnapSack()
 43.0
+
+KS.final_bag
+[('wt: 1', 'value: 6', 'fraction: 1'),
+ ('wt: 2', 'value: 10', 'fraction: 1'),
+ ('wt: 4', 'value: 18', 'fraction: 1'),
+ ('wt: 5', 'value: 15', 'fraction: 0.6')]
 
