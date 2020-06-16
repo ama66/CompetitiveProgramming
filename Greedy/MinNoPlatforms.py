@@ -33,8 +33,9 @@ class EventList:
             Min_Platforms=max(Min_Platforms,Curr_Req_Platforms)
             
         return Min_Platforms
-        
-        
+       
+# g="9:30"  can be converted to time like this int("".join(g.split(":"))) >> 930     
+
 Arr=[900, 940, 950, 1100, 1500, 1800]
 Dept=[910, 1200, 1120, 1130, 1900, 2000]
 E=EventList()
